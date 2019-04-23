@@ -1,0 +1,11 @@
+version: '3'
+services:
+  node8:
+    container_name: node-map
+#    build: .
+    image: ses2/node:8
+    tty: true
+    volumes:
+      - ./app:/app
+    ports:
+      - "8080:8080"
