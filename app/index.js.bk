@@ -1,8 +1,6 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var PORT = 8080
-const Line = require('./getGeojson')
-var myLines = Line.getLines()
 
 
 //ルートディレクトリにアクセスした時に動く処理
@@ -12,13 +10,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/*.js', function(req, res) {
-  var url = req.url
-  if(url ==  '/getRoute.js'){
-    route = getRoute();
-  } else {
-    res.sendFile(__dirname + req.url);
-  }
-
+  res.sendFile(__dirname + res.url);
 });
 
 
